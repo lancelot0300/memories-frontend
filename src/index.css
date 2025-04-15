@@ -1,0 +1,80 @@
+*, *::before, *::after{
+  box-sizing: border-box; 
+}
+*{
+  margin: 0; 
+  padding: 0; 
+  user-select: none;
+}
+
+:root {
+  --btn-color: #BB86FC;
+  --navBarHeight: 60px;
+  --appHeight: calc(100svh - var(--navBarHeight));
+  --background-color: #040a19;
+}
+
+html{
+  font-size: 62.5%; 
+}
+
+body{
+  font-size: 1.6rem; 
+  font-family: 'Roboto', sans-serif; 
+  line-height: 1.6; 
+  color: #fff; 
+  background-color: var(--background-color)
+}
+body, html, .App{
+  height: 100svh; 
+  scroll-behavior: smooth; 
+}
+
+body::-webkit-scrollbar {
+  width: 0.8rem;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+ul[role='list'], ol[role='list']{
+  list-style: none; 
+}
+html:focus-within{
+  scroll-behavior: smooth; 
+}
+a:not([class]){
+  text-decoration-skip-ink: auto; 
+}
+img, picture, svg, video, canvas{
+  max-width: 100%;
+  height: auto;
+}
+img, picture, svg, video, canvas{
+  vertical-align: middle; 
+}
+img, picture, svg, video, canvas{
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+input, button, textarea, select{
+  font: inherit; 
+}
+@media (prefers-reduced-motion: reduce){
+  html:focus-within {
+      scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transition: none;
+  }
+}
